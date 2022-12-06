@@ -1,12 +1,1 @@
-{
-  "../node_modules/next-sanity/dist/index.js -> @sanity/groq-store": {
-    "id": "../node_modules/next-sanity/dist/index.js -> @sanity/groq-store",
-    "files": []
-  },
-  "work/[slug].js -> @samvera/clover-iiif": {
-    "id": "work/[slug].js -> @samvera/clover-iiif",
-    "files": [
-      "static/chunks/node_modules_samvera_clover-iiif_dist_index_esm_js.js"
-    ]
-  }
-}
+{}
