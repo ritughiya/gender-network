@@ -1,6 +1,1 @@
-{
-  "../node_modules/next-sanity/dist/index.js -> @sanity/groq-store": {
-    "id": "../node_modules/next-sanity/dist/index.js -> @sanity/groq-store",
-    "files": []
-  }
-}
+{}
