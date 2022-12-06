@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={}
+self.__REACT_LOADABLE_MANIFEST={"../node_modules/next-sanity/dist/index.js -> @sanity/groq-store":{"id":"../node_modules/next-sanity/dist/index.js -> @sanity/groq-store","files":[]}}
