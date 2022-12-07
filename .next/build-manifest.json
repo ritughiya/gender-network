@@ -30,10 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/category/flyer": [
+    "/about": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/category/flyer.js"
+      "static/chunks/pages/about.js"
+    ],
+    "/work/[slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/work/[slug].js"
     ]
   },
   "ampFirstPages": []
