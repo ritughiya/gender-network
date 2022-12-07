@@ -14,10 +14,23 @@
  import Drawer from 'react-modern-drawer'
  import 'react-modern-drawer/dist/index.css'
  import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
- import { LazyLoadImage } from "react-lazy-load-image-component";
  import Arrow from '../public/Arrowdown.svg';
  import Missing from '../public/Missingcard.png';
  import Footer from "../components/Footer"
+
+// Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1, e2, e3) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+const rgbDataURL = (r, g, b) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 
  
@@ -66,54 +79,54 @@ className='bla bla bla'
     <div className="col1a">
         <div className="heading">Location</div>
         <div className="list region">
-            <a href="/categories/midwest">Midwest</a>
-            <a href="/categories/NYC">NYC</a>
-            <a href="/categories/pacific-northwest">Pacific Northwest</a>
-            <a href="/categories/san-francisco">San Francisco</a>
-            <a href="/categories/south">South</a>
+            <a href="/category/midwest">Midwest</a>
+            <a href="/category/NYC">NYC</a>
+            <a href="/category/pacific-northwest">Pacific Northwest</a>
+            <a href="/category/san-francisco">San Francisco</a>
+            <a href="/category/south">South</a>
         </div>
         <div className="heading">Decade</div>
         <div className="list time">
-            <a href="/categories/1960s">1960s</a>
-            <a href="/categories/1970s">1970s</a>
-            <a href="/categories/1980s">1980s</a>
-            <a href="/categories/1990s">1990s</a>
-            <a href="/categories/2000s">2000s</a>
+            <a href="/category/1960s">1960s</a>
+            <a href="/category/1970s">1970s</a>
+            <a href="/category/1980s">1980s</a>
+            <a href="/category/1990s">1990s</a>
+            <a href="/category/2000s">2000s</a>
         </div>
     </div>
 
     <div className="col2a">
     <div className="heading">Topic</div>
         <div className="list topic">
-            <a href="/categories/storm-delarverie">Storm DeLarverie</a>
-            <a href="/categories/NYC">Cockettes</a>
-            <a href="/categories/pacific-northwest">Power Exchange</a>
-            <a href="/categories/sissy-spaceout">Sissy Spaceout</a>
-            {/* <a href="/categories/san-francisco">San Francisco</a>
-            <a href="/categories/south">South</a>
-            <a href="/categories/1960s">1960s</a>
-            <a href="/categories/1970s">1970s</a>
-            <a href="/categories/1980s">1980s</a>
-            <a href="/categories/1990s">1990s</a>
-            <a href="/categories/2000s">2000s</a> */}
+            <a href="/category/storm-delarverie">Storm DeLarverie</a>
+            <a href="/category/NYC">Cockettes</a>
+            <a href="/category/pacific-northwest">Power Exchange</a>
+            <a href="/category/sissy-spaceout">Sissy Spaceout</a>
+            {/* <a href="/category/san-francisco">San Francisco</a>
+            <a href="/category/south">South</a>
+            <a href="/category/1960s">1960s</a>
+            <a href="/category/1970s">1970s</a>
+            <a href="/category/1980s">1980s</a>
+            <a href="/category/1990s">1990s</a>
+            <a href="/category/2000s">2000s</a> */}
         </div>
     </div>
 
     <div className="col3a">
     <div className="heading">Type</div>
         <div className="list type">
-            <a href="/categories/book">Book</a>
-            <a href="/categories/flyer">Flyer</a>
-            <a href="/categories/newspaper">Newspaper</a>
-            <a href="/categories/photo">Photo</a>
+            <a href="/category/book">Book</a>
+            <a href="/category/flyer">Flyer</a>
+            <a href="/category/newspaper">Newspaper</a>
+            <a href="/category/photo">Photo</a>
 
-            {/* <a href="/categories/san-francisco">San Francisco</a>
-            <a href="/categories/south">South</a>
-            <a href="/categories/1960s">1960s</a>
-            <a href="/categories/1970s">1970s</a>
-            <a href="/categories/1980s">1980s</a>
-            <a href="/categories/1990s">1990s</a>
-            <a href="/categories/2000s">2000s</a> */}
+            {/* <a href="/category/san-francisco">San Francisco</a>
+            <a href="/category/south">South</a>
+            <a href="/category/1960s">1960s</a>
+            <a href="/category/1970s">1970s</a>
+            <a href="/category/1980s">1980s</a>
+            <a href="/category/1990s">1990s</a>
+            <a href="/category/2000s">2000s</a> */}
         </div>
     </div>
 </div>
@@ -128,14 +141,14 @@ className='bla bla bla'
          {properties.map(post => (
                         <Link href="/work/sample" key={post._id}>
            <div className="workCard" >
-
-  <LazyLoadImage src={urlFor(post.coverphoto).url()}  />
+<div className="workContainer">
+  <Image src={urlFor(post.coverphoto).url()}  placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} /></div>
             {post.title}
 
            </div></Link>
          ))}
                     <div className="submitMore workCard">
-                    <Image src={Missing} className="missing" />
+                    <Image src={Missing} className="missing" width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} />
 
            </div>
          </Masonry>
