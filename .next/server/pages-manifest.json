@@ -3,7 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.js",
-  "/work/[slug]": "pages/work/[slug].js",
-  "/fullindex": "pages/fullindex.js",
   "/": "pages/index.js"
 }
