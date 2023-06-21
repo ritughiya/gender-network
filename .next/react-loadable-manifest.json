@@ -26,5 +26,11 @@
     "files": [
       "static/chunks/components_Bubble4_js.js"
     ]
+  },
+  "work/[slug].js -> @samvera/clover-iiif": {
+    "id": "work/[slug].js -> @samvera/clover-iiif",
+    "files": [
+      "static/chunks/node_modules_samvera_clover-iiif_dist_index_esm_js.js"
+    ]
   }
 }
