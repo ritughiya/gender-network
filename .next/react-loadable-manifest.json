@@ -26,5 +26,11 @@
     "files": [
       "static/chunks/components_Bubble4_js.js"
     ]
+  },
+  "index.js -> ../components/Cloudbg": {
+    "id": "index.js -> ../components/Cloudbg",
+    "files": [
+      "static/chunks/components_Cloudbg_js.js"
+    ]
   }
 }
